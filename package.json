@@ -1,26 +1,15 @@
+
 {
   "name": "metric-imperial-converter",
   "version": "1.0.0",
-  "description": "",
+  "description": "FreeCodeCamp Metric Imperial Converter",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "mocha tests/**/*.js --timeout 5000 --exit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Geetha-SECE/Metric-Imperial-Converter.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Geetha-SECE/Metric-Imperial-Converter/issues"
-  },
-  "homepage": "https://github.com/Geetha-SECE/Metric-Imperial-Converter#readme",
   "dependencies": {
-    "dotenv": "^18.0.10",
+    "dotenv": "^16.4.5",
     "express": "^4.18.2"
   },
   "devDependencies": {

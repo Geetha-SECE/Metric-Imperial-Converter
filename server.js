@@ -1,5 +1,8 @@
+
 require('dotenv').config();
+
 const express = require('express');
+const path = require('path');
 const api = require('./routes/api');
 
 const app = express();
@@ -7,12 +10,24 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve frontend files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// API routes
 app.use('/api', api);
 
+// Homepage
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// 404 handler
 app.use((req, res) => {
   res.status(404).send('Not found');
 });
 
+// Start server outside test environment
 if (process.env.NODE_ENV !== 'test') {
   app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
